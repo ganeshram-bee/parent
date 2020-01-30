@@ -42,9 +42,9 @@ class childApp1 extends React.Component {
     this.fetchScript(
       'http://mf-dummy-app.s3.ap-south-1.amazonaws.com/childApp/static/js/runtime-main.094ee29f.js',
     );
-    this.fetchScript(
-      'http://mf-dummy-app.s3.ap-south-1.amazonaws.com/childApp/static/js/2.b9383955.chunk.js',
-    );
+    // this.fetchScript(
+    //   'http://mf-dummy-app.s3.ap-south-1.amazonaws.com/childApp/static/js/2.b9383955.chunk.js',
+    // );
     this.fetchScript(
       'http://mf-dummy-app.s3.ap-south-1.amazonaws.com/childApp/static/js/main.5a8af9e5.chunk.js',
     );

@@ -32,9 +32,9 @@ class childApp2 extends React.Component {
     // for (var i = 0; i < jsFiles.length; i++) {
     // 	console.log(urlPrefix + jsFiles[i]);
     // }
-    this.fetchScript(
-      'http://mf-dummy-app.s3.ap-south-1.amazonaws.com/childApp2/static/js/2.5599f84a.chunk.js',
-    );
+    // this.fetchScript(
+    //   'http://mf-dummy-app.s3.ap-south-1.amazonaws.com/childApp2/static/js/2.5599f84a.chunk.js',
+    // );
     this.fetchScript(
       'http://mf-dummy-app.s3.ap-south-1.amazonaws.com/childApp2/static/js/main.741efb5e.chunk.js',
     );
