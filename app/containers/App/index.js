@@ -8,20 +8,27 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
+import childApp1 from 'containers/childApp1/Loadable';
+import childApp2 from 'containers/childApp2/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
 
-export default function App() {
+export default function App(props) {
+  const { history } = props;
   return (
     <div>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route component={NotFoundPage} />
-      </Switch>
+      <BrowserRouter basename="/parent" history={history}>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/childApp1" component={childApp1} />
+          <Route exact path="/childApp2" component={childApp2} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </BrowserRouter>
       <GlobalStyle />
     </div>
   );

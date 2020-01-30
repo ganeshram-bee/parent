@@ -6,6 +6,7 @@ const OfflinePlugin = require('offline-plugin');
 const { HashedModuleIdsPlugin } = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = require('./webpack.base.babel')({
   mode: 'production',
@@ -18,8 +19,8 @@ module.exports = require('./webpack.base.babel')({
 
   // Utilize long-term caching by adding content hashes (not compilation hashes) to compiled assets
   output: {
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].chunk.js',
+    filename: 'parent/[name].[chunkhash].js',
+    chunkFilename: 'parent/[name].[chunkhash].chunk.js',
   },
 
   optimization: {
@@ -69,6 +70,7 @@ module.exports = require('./webpack.base.babel')({
     // Minify and optimize the index.html
     new HtmlWebpackPlugin({
       template: 'app/index.html',
+      filename: './index.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -83,6 +85,9 @@ module.exports = require('./webpack.base.babel')({
       },
       inject: true,
     }),
+
+    // maifest
+    new ManifestPlugin(),
 
     // Put it in the end to capture all the HtmlWebpackPlugin's
     // assets manipulations and do leak its manipulations to HtmlWebpackPlugin
