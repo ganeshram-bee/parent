@@ -7,6 +7,13 @@
 
 import React from 'react';
 import Eev from 'eev';
+import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 class childApp1 extends React.Component {
   constructor(props) {
@@ -40,14 +47,15 @@ class childApp1 extends React.Component {
     // 	console.log(urlPrefix + jsFiles[i]);
     // }
     this.fetchScript(
-      'http://mf-dummy-app.s3.ap-south-1.amazonaws.com/childApp/static/js/runtime-main.094ee29f.js',
+      'http://mi-dummy.s3-website.ap-south-1.amazonaws.com/childApp/static/js/runtime-main.094ee29f.js',
     );
-    // this.fetchScript(
-    //   'http://mf-dummy-app.s3.ap-south-1.amazonaws.com/childApp/static/js/2.b9383955.chunk.js',
-    // );
     this.fetchScript(
-      'http://mf-dummy-app.s3.ap-south-1.amazonaws.com/childApp/static/js/main.5a8af9e5.chunk.js',
+      'http://mi-dummy.s3-website.ap-south-1.amazonaws.com/childApp/static/js/2.b9383955.chunk.js',
     );
+    this.fetchScript(
+      'http://mi-dummy.s3-website.ap-south-1.amazonaws.com/childApp/static/js/main.5a8af9e5.chunk.js',
+    );
+    
   }
 
   render() {

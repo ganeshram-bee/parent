@@ -13,6 +13,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import HomePage from 'containers/HomePage/Loadable';
 import childApp1 from 'containers/childApp1/Loadable';
 import childApp2 from 'containers/childApp2/Loadable';
+import childApp3 from 'containers/childApp3/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
@@ -26,6 +27,7 @@ export default function App(props) {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/childApp1" component={childApp1} />
           <Route exact path="/childApp2" component={childApp2} />
+          <Route exact path="/childApp3" component={childApp3} />
           <Route component={NotFoundPage} />
         </Switch>
       </BrowserRouter>
